@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Questions{% endblock %}
+
+{% block content %}
+<p>{{ question.question }}:</p>
+<form action="/answer" method="post">
+    {% for choice in question.choices %}
+    <input name="answer" value = "{{ choice }}" type ="radio"> {{ choice }}
+    {% endfor %}
+<button>Submit</button>
+</form>
+
+{% endblock %}
+
